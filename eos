@@ -1,0 +1,34 @@
+! Command: show running-config
+! device: demo (cEOSLab, EOS-4.30.0F-31408673.4300F (engineering build))
+!
+no aaa root
+!
+username admin privilege 15 role network-admin secret sha512 $6$DnkSFN3h00DOkTzq$W/fJWw4Xjt1PjxQ8Ougi6Choj/IdaNmeZuS/WS/XQubqqpt32qrfEvCPDkkrUsPtdtbrI7JLvMKyg8Pe76bv.0
+!
+transceiver qsfp default-mode 4x10G
+!
+service routing protocols model ribd
+!
+agent PowerManager shutdown
+agent LedPolicy shutdown
+agent Thermostat shutdown
+agent PowerFuse shutdown
+agent StandbyCpld shutdown
+agent LicenseManager shutdown
+!
+hostname demo
+!
+spanning-tree mode mstp
+!
+system l1
+   unsupported speed action error
+   unsupported error-correction action error
+!
+interface Management0
+   ip address 10.88.0.3/16
+!
+no ip routing
+!
+ip route 0.0.0.0/0 10.88.0.1
+!
+end
