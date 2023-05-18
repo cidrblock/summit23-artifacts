@@ -25,6 +25,7 @@ system l1
    unsupported error-correction action error
 !
 interface Management0
+   description "20230518180556"
    ip address 10.88.0.3/16
 !
 no ip routing
