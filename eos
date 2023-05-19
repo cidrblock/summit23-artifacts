@@ -1,9 +1,9 @@
 ! Command: show running-config
-! device: demo (cEOSLab, EOS-4.30.0F-31408673.4300F (engineering build))
+! device: eos (cEOSLab, EOS-4.30.0F-31408673.4300F (engineering build))
 !
 no aaa root
 !
-username admin privilege 15 role network-admin secret sha512 $6$DnkSFN3h00DOkTzq$W/fJWw4Xjt1PjxQ8Ougi6Choj/IdaNmeZuS/WS/XQubqqpt32qrfEvCPDkkrUsPtdtbrI7JLvMKyg8Pe76bv.0
+username admin privilege 15 role network-admin secret sha512 $6$toX42Oa70IpSqgA1$8yTYEqpYWnl2GhXY7rkp5vlRB689OK2GHsyvDXGyJp7vwP32R0Oj/cjIFcnlDfeIAl5xd8F6P02ls2TcntVKE1
 !
 transceiver qsfp default-mode 4x10G
 !
@@ -16,7 +16,7 @@ agent PowerFuse shutdown
 agent StandbyCpld shutdown
 agent LicenseManager shutdown
 !
-hostname demo
+hostname eos
 !
 spanning-tree mode mstp
 !
@@ -25,8 +25,8 @@ system l1
    unsupported error-correction action error
 !
 interface Management0
-   description 20230519104512
-   ip address 10.88.0.3/16
+   description 20230519195319
+   ip address 10.88.0.2/16
 !
 no ip routing
 !
